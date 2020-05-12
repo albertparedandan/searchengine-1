@@ -162,8 +162,9 @@ func RetrievalFunction(query string) []*PageScore {
 		return pagesScores[i].Score > pagesScores[j].Score
 	})
 
+	newMap := map[string][]*PageScore{"result": pagesScores}
 	// write to json, kalo ini gadipake dibuang aja
-	file, _ := json.MarshalIndent(pagesScores, "", " ")
+	file, _ := json.MarshalIndent(newMap, "", " ")
 
 	ioutil.WriteFile("search_output.json", file, os.ModePerm)
 
