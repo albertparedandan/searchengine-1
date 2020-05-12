@@ -11,7 +11,7 @@ import (
 func main() {
 	database.OpenAllDb()
 	fmt.Println(time.Now())
-	r := retrieval.RetrievalFunction("nani widjaja")
+	r := retrieval.RetrievalFunction("hkust widjaja")
 	fmt.Println(time.Now())
 	for k, v := range r {
 		fmt.Println("key ", k, "value", v.GetURL(), v.GetTitle(), v.GetPageRank())
