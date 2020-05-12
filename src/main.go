@@ -37,6 +37,7 @@ func Crawl(baseURL string) map[string]*crawler.Page {
 func main() {
 	const baseURL = "https://www.cse.ust.hk/"
 	fmt.Println(time.Now()) // buat ngecek dia brp lama runnya
+  start := time.Now()
 
 	pagesMap := Crawl(baseURL) // get the mapping of url --> page struct
 	fmt.Println("Len of map %v", len(pagesMap))
@@ -70,6 +71,8 @@ func main() {
 	database.ParseAllPages(&newMap)
 	//database.PrintPageIdDb()
 	fmt.Println(time.Now())
+  elapsed := time.Since(start)
+  fmt.Println("The whole thing took ", elapsed)
 	// mapAkhir := newMap["https://www.cse.ust.hk/admin/people/staff/"]
 	// fmt.Println(mapAkhir.GetTitle())
 	// fmt.Println(mapAkhir.GetKeywords())
