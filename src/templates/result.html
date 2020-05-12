@@ -34,9 +34,40 @@
             </div>
         </div>
         <div class="container-fluid result-box">
-            <div class="row">
+            <div class="row txt-box">
                 <div class=" col-12" align="justify">
-                    <a>{{.Time}}</a>
+<!--                     <script>
+                        $(document).ready(function() {
+                            $.getJSON("../search_output.json", function(json) {
+                                var htm = "check check chek";
+                                console.log(htm);
+                                json.forEach(function(val) {
+                                    var keys = Object.keys(val);
+                                    htm += "<div>";
+                                    keys.forEach(function(key) {
+                                        console.log(key);
+                                        //htm += "<strong>" + key + "</strong>: " + val[key] + "<br>";
+                                    });
+                                    htm += "</div><br>";
+                                    console.log(htm);
+                                });
+                                $(".data").html(htm);
+                            });
+                        });
+                    </script> -->
+                     {{range .count}}
+                        {{if .ResultPage}}
+                            {{.Id}}
+                            {{.Score}}
+                            {{.Title}}
+                            {{.Url}}
+                            {{.LastModified}}
+                            {{.PageSize}}
+                            {{.Keywords}}
+                            {{.Parents}}
+                            {{.Children}}
+                        {{end}}
+                    {{end}}
                 </div>
             </div>
         </div>

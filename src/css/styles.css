@@ -40,7 +40,6 @@ body {
     padding: 0;
     color: black;
     font-size: 14px;
-    transition: 0.4s;
     line-height: 50px;
     width: 350px;
     margin-left: 10px;
@@ -69,4 +68,18 @@ h1 {
     border-radius: 10px;
     margin-top: 100px;
     max-width: 500px;
+}
+
+.txt-box {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: black;
+    font-size: 14px;
+    width: 490px;
+    text-overflow: ellipsis;
+    margin-left: 5px;
+    margin-right: 5px;
 }
